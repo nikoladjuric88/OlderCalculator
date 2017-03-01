@@ -1,229 +1,134 @@
 /*=================================== brojevi==================================================*/
 
-function brojJedan() {
-    var pise = document.getElementById('izvestaj');
-   pise.value += 1;
-}
+var writes = document.getElementById('screen');
 
-function brojDva() {
-    var pise = document.getElementById('izvestaj');
-    pise.value += 2;
-}
+var addNumbers = document.querySelector('.allNumbers');
+var addEveryNumber = addNumbers.querySelectorAll('.number');
 
-function brojTri() {
-    var pise = document.getElementById('izvestaj');
-    pise.value += 3; 
-}
 
-function brojCetiri() {
-    var pise = document.getElementById('izvestaj');
-    pise.value += 4; 
-}
+for (var i = 0; i <= addEveryNumber.length - 1; i++) {
 
-function brojPet() {
-    var pise = document.getElementById('izvestaj');
-    pise.value += 5; 
-}
+    addEveryNumber[i].onclick = function() {
 
-function brojSest() {
-    var pise = document.getElementById('izvestaj');
-    pise.value += 6; 
-}
+        writes.value += this.innerHTML;
 
-function brojSedam() {
-    var pise = document.getElementById('izvestaj');
-    pise.value += 7; 
-}
-
-function brojOsam() {
-    var pise = document.getElementById('izvestaj');
-    pise.value += 8; 
-}
-
-function brojDevet() {
-    var pise = document.getElementById('izvestaj');
-    pise.value += 9; 
-}
-
-function brojNula() {
-    var pise = document.getElementById('izvestaj');
-    if(pise.value==="") {
-       pise.value='';
+        if (writes.value[0] === '0') {
+            writes.value = "";
+        }
+        writes.focus();
     }
-    else{pise.value+=0}
-}
+};
+
 /*=================================== brojevi==================================================*/
 /*=================================== operacije================================================*/
 
-function plus() {
-    var pise = document.getElementById('izvestaj');
-       
-        if(pise.value==='') {
-            pise.value='';
+var addOperations = addNumbers.querySelectorAll('.operation');
+
+for (var i = 0; i <= addOperations.length - 1; i++) {
+
+    addOperations[i].onclick = function() {
+
+        if (!isNaN(writes.value)) {
+            writes.value += this.innerHTML;
         }
-        else if(isNaN(pise.value)===false) {
-     pise.value+='+'; 
-       } 
-    else if(isNaN(pise.value)===true) {
-     pise.value+='';
-       }  
-        else{pise.value+='+'}
-       }
-
-    
- function minus() {
-    var pise = document.getElementById('izvestaj');
-
-         if(pise.value==='') {
-            pise.value='';
+        if (writes.value[0] === '-' || writes.value[0] === '+' || writes.value[0] === 'x' || writes.value[0] === '/') {
+            writes.value = "";
         }
-         else if(isNaN(pise.value)===false) {
-     pise.value+='-'; 
-      } 
-      else if(isNaN(pise.value)===true) {
-     pise.value+='';
-       } 
-         else{pise.value+='+'}   
-}   
-  
-function puta() {
-    var pise = document.getElementById('izvestaj');
+        writes.focus();
+    }
+};
 
-         if(pise.value==='') {
-            pise.value='';
+var btnEquality = document.getElementById("equality");
+
+btnEquality.onclick = function() {
+
+    var textLength = writes.value.length;
+    for (var i = 0; i < textLength; i++) {
+        if (writes.value[i] === '-') {
+            writes.value1 = writes.value.substring(0, writes.value.indexOf('-'));
+            writes.value2 = writes.value.substring(writes.value.indexOf('-') + 1);
+            writes.value = writes.value1 - writes.value2;
+        } else if (writes.value[i] === '+') {
+            writes.value1 = writes.value.substring(0, writes.value.indexOf('+'));
+            writes.value2 = writes.value.substring(writes.value.indexOf('+') + 1);
+            writes.value = Number(writes.value1) + Number(writes.value2);
+        } else if (writes.value[i] === 'x') {
+            writes.value1 = writes.value.substring(0, writes.value.indexOf('x'));
+            writes.value2 = writes.value.substring(writes.value.indexOf('x') + 1);
+            writes.value = writes.value1 * writes.value2;
+        } else if (writes.value[i] === '/') {
+            writes.value1 = writes.value.substring(0, writes.value.indexOf('/'));
+            writes.value2 = writes.value.substring(writes.value.indexOf('/') + 1);
+            writes.value = writes.value1 / writes.value2;
         }
-        
-       else if(isNaN(pise.value)===false) {
-     pise.value+='x'; 
-     
-       } 
-     
-    else if(isNaN(pise.value)===true) {
-     pise.value+='';
-       
-       } 
-        
-        else{pise.value+='x'}   
-}   
-
-function podeljeno() {
-    var pise = document.getElementById('izvestaj');
-
-         if(pise.value==='') {
-            pise.value='';
-        }
-        
-       else if(isNaN(pise.value)===false) {
-     pise.value+='/'; 
-     
-       } 
-     
-    else if(isNaN(pise.value)===true) {
-     pise.value+='';
-       
-       } 
-        
-        else{pise.value+='/'}   
-} 
-
-function jednako() {
-     var pise = document.getElementById('izvestaj');
-     var textLength = pise.value.length;
-for(var i=0; i<textLength; i++) {    
- if(pise.value[i]==='-'){
-     pise.value1 = pise.value.substring(0,pise.value.indexOf('-'));
-     pise.value2 = pise.value.substring(pise.value.indexOf('-')+1); 
-  
-     pise.value = pise.value1 - pise.value2;
-    } 
-    
-  else if(pise.value[i]==='+'){
-     pise.value1 = pise.value.substring(0,pise.value.indexOf('+'));
-     pise.value2 = pise.value.substring(pise.value.indexOf('+')+1);  
-      pise.value = Number(pise.value1) + Number(pise.value2);
-  }   
-    
-    
-   else if(pise.value[i]==='x'){
-      pise.value1 = pise.value.substring(0,pise.value.indexOf('x'));
-      pise.value2 = pise.value.substring(pise.value.indexOf('x')+1); 
-    
-      pise.value = pise.value1 * pise.value2;  
-   }
-   
-    
-    else if(pise.value[i]==='/'){
-      pise.value1 = pise.value.substring(0,pise.value.indexOf('/'));
-      pise.value2 = pise.value.substring(pise.value.indexOf('/')+1); 
-    
-      pise.value = pise.value1 / pise.value2;  
-   }    
-}
-}
-
+    }
+    writes.focus();
+};
 
 /*=================================== operacije================================================*/
 /*=================================== ostalo================================================*/
-function brisanje() {
-    var pise = document.getElementById('izvestaj');
-    pise.value='';
-}
 
-function jednoBrisanje() {
-    var pise = document.getElementById('izvestaj');
-    pise.value=pise.value.substring(0, pise.value.length - 1);
+var btnDelete = document.getElementById("delete");
 
-}
+btnDelete.onclick = function() {
+    writes.value = '';
+};
 
-function coma() {
-    var pise = document.getElementById('izvestaj');
-    var textLength = pise.value.length;
-    pise.value+='.';
-for(var i=0; i<textLength; i++) {    
+var btnOneDelete = document.getElementById("oneDelete");
 
- if(pise.value[i]==='.'){
-    pise.value=pise.value.substring(0, pise.value.length - 1);  
-}
- if(pise.value[i]==='-' || pise.value[i]==='+' || pise.value[i]==='*' || pise.value[i]==='/'){
-    pise.value+='.';
-    
-}
-}
-}
+btnOneDelete.onclick = function() {
+    writes.value = writes.value.substring(0, writes.value.length - 1);
+    writes.focus();
+};
 
-function squareRoot() {
-    var pise = document.getElementById('izvestaj');
-     
-    
-    if(isNaN(pise.value)===false) {
-         pise.value = Math.sqrt(pise.value);
-       } 
-    
-          else if(isNaN(pise.value)===true) {
-           pise.value+='';      
-       }
-}
+var btnComa = document.getElementById("coma");
 
-function square() {
-    var pise = document.getElementById('izvestaj');
-     
-    if(isNaN(pise.value)===false) {
-         pise.value = Math.pow(pise.value,2);
-       } 
-    
-          else if(isNaN(pise.value)===true) {
-           pise.value+='';      
-       }
-}
+btnComa.onclick = function() {
+    var textLength = writes.value.length;
+    writes.value += '.';
+    for (var i = 0; i < textLength; i++) {
+        if (writes.value[i] === '.') {
+            writes.value = writes.value.substring(0, writes.value.length - 1);
+        }
+        if (writes.value[i] === '-' || writes.value[i] === '+' || writes.value[i] === 'x' || writes.value[i] === '/') {
+            writes.value += '.';
 
-function percent() {
-    var pise = document.getElementById('izvestaj');
-     var textLength = pise.value.length;
-    for(var i=0; i<textLength; i++) {  
-       if(pise.value[i]==='/'){
-           pise.value1 = pise.value.substring(0,pise.value.indexOf('/'));
-           pise.value2 = pise.value.substring(pise.value.indexOf('/')+1); 
-           pise.value = pise.value1 / pise.value2 * 100; 
-}
-}
-}
+        }
+    }
+    writes.focus();
+};
+
+var btnSquareRoot = document.getElementById("Squareroot");
+
+btnSquareRoot.onclick = function() {
+
+    if (!isNaN(writes.value)) {
+        writes.value = Math.sqrt(writes.value);
+    }
+    writes.focus();
+};
+
+var btnSquare = document.getElementById("Square");
+
+btnSquare.onclick = function() {
+
+    if (!isNaN(writes.value)) {
+        writes.value = Math.pow(writes.value, 2);
+    }
+    writes.focus();
+};
+
+var btnPercent = document.getElementById("Percent");
+
+btnPercent.onclick = function() {
+
+    var textLength = writes.value.length;
+    for (var i = 0; i < textLength; i++) {
+        if (writes.value[i] === '/') {
+            writes.value1 = writes.value.substring(0, writes.value.indexOf('/'));
+            writes.value2 = writes.value.substring(writes.value.indexOf('/') + 1);
+            writes.value = writes.value1 / writes.value2 * 100;
+        }
+    }
+    writes.focus();
+};

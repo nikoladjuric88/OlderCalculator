@@ -1,16 +1,15 @@
-#jednobrisanje  {
+#oneDelete {
     width: 25px;
     height: 20px;
     font-size: 13px;
     padding: 0px 0px 0px 0px;
 }
 
-#Coma {
+#coma {
     width: 25px;
     height: 20px;
     padding: 0px 0px 0px 0px;
 }
-
 
 #Squareroot {
     width: 25px;
@@ -27,7 +26,6 @@
 #Percent {
     width: 25px;
     height: 20px;
-    padding: 0px 0px 0px 0px;    
+    padding: 0px 0px 0px 0px;
 }
-
 
