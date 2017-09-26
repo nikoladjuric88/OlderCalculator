@@ -1,0 +1,63 @@
+#oneDelete {
+    width: 25px;
+    height: 20px;
+    font-size: 13px;
+    padding: 0px 0px 0px 0px;
+}
+
+#coma {
+    width: 25px;
+    height: 20px;
+    padding: 0px 0px 0px 0px;
+}
+
+#Squareroot {
+    width: 25px;
+    height: 20px;
+    padding: 0px 0px 0px 0px;
+}
+
+#Square {
+    width: 25px;
+    height: 20px;
+    padding: 0px 0px 0px 0px;
+}
+
+#Percent {
+    width: 25px;
+    height: 20px;
+    padding: 0px 0px 0px 0px;
+}
+
+.allButtons {
+    width: 143px;
+    height: 235px;
+    background: linear-gradient(#7F8C8D, #CACFD2);
+    border: 1px solid #CACFD2;
+    border-radius: 0.5em;
+}
+
+#screen {
+    margin: 9px 0px 0px 3px;
+    padding: 2px 0px 0px 0px;
+    width: 133px;
+    background-color: #ECF0F1;
+}
+
+.number {
+    width: 30px;
+    margin: 0px 0px 0px 3px;
+}
+
+.operation {
+    width: 30px;
+}
+
+#delete {
+    width: 30px;
+    margin: 0px 0px 0px 4px;
+}
+
+#equality {
+    width: 30px;
+}
