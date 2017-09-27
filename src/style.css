@@ -1,0 +1,78 @@
+#oneDelete {
+    width: 25px;
+    margin-left: 6px;
+    padding-left: 2px;
+}
+
+#coma {
+    width: 25px;
+}
+
+#Squareroot {
+    width: 25px;
+}
+
+#Square {
+    width: 25px;
+}
+
+#Percent {
+    width: 25px;
+}
+
+#memoryClear {
+    width: 25px;
+    margin-left: 6px;
+    padding-left: 1px;
+}
+
+#memoryRecall {
+    width: 25px;
+    padding-left: 1px;
+}
+
+#memoryPlus {
+    width: 25px;
+    padding-left: 2px;
+}
+
+#memoryMinus {
+    width: 25px;
+    padding-left: 3px;
+}
+
+#precedenceOps {
+    width: 25px;
+    margin: 10px 0px 0px 0px;
+    padding-left: 1px;
+}
+
+.allButtons {
+    width: 152px;
+    height: 260px;
+    background: linear-gradient(#7F8C8D, #CACFD2);
+    border: 1px solid #CACFD2;
+    border-radius: 0.5em;
+}
+
+#screen {
+    margin: 9px 0px 0px 5px;
+    padding: 2px 1px 0px 0px;
+    width: 136px;
+    background-color: #ECF0F1;
+}
+
+.number {
+    width: 30px;
+    margin-left: 4px;
+}
+
+.operation {
+    width: 30px;
+    margin-left: 4px;
+}
+
+#delete {
+    width: 30px;
+    margin-left: 6px;
+}
